@@ -1,19 +1,19 @@
 apiVersion: apps/v1
-kind: Deployment 
+kind: Deployment
 metadata:
   name: kubernetes-hello-world-deployment
-spec: 
+spec:
   replicas: 2
   selector:
     matchLabels:
       app: kubernetes-hello-world
   template:
     metadata:
-      label:
-      app: kubernetes-hello-world
-  spec:
-    container:
-      name: kubernetes-hello-world-container
-      image: alensden2/kube-hello-world:tag
-      ports:
+      labels:
+        app: kubernetes-hello-world
+    spec:
+      containers:
+      - name: kubernetes-hello-world-container
+        image: alensden2/kube-hello-world:tag1
+        ports:
         - containerPort: 3000
